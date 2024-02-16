@@ -17,6 +17,7 @@ import androidx.compose.ui.Modifier
 import androidx.compose.ui.tooling.preview.Devices
 import androidx.compose.ui.tooling.preview.Preview
 import androidx.compose.ui.unit.dp
+import com.rmtz.qr.navigation.Navigation
 import com.rmtz.qr.ui.component.QrCodeView
 import com.rmtz.qr.ui.theme.QRTheme
 
@@ -30,7 +31,7 @@ class MainActivity : ComponentActivity() {
                     modifier = Modifier.fillMaxSize(),
                     color = MaterialTheme.colorScheme.background
                 ) {
-                    Greeting("Android")
+                    Navigation()
                 }
             }
         }
@@ -44,7 +45,9 @@ fun Greeting(name: String, modifier: Modifier = Modifier) {
             text = "Hello $name!",
             modifier = modifier
         )
-        Spacer(modifier = Modifier.height(20.dp).fillMaxWidth())
+        Spacer(modifier = Modifier
+            .height(20.dp)
+            .fillMaxWidth())
         QrCodeView(
             data = "https://github.com/lightsparkdev/compose-qr-code",
             modifier = Modifier.size(300.dp)

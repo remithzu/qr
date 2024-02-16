@@ -7,8 +7,22 @@ junitVersion = "1.1.5"
 espressoCore = "3.5.1"
 lifecycleRuntimeKtx = "2.7.0"
 activityCompose = "1.8.2"
-composeBom = "2023.08.00"
+composeBom = "2024.02.00"
+test-manifest = "1.6.1"
+google-fonts = "1.6.1"
+foundation = "1.6.1"
+livedata = "1.6.1"
 zxing = "3.5.1"
+navigation = "2.7.7"
+timber = "5.0.1"
+coil = "2.5.0"
+splash = "1.0.1"
+accompanist = "0.34.0"
+font-awesome = "1.0.0"
+palette = "1.0.0"
+koin = "3.6.0-wasm-alpha1"
+room = "2.6.1"
+material3 = "1.2.0"
 
 [libraries]
 androidx-core-ktx = { group = "androidx.core", name = "core-ktx", version.ref = "coreKtx" }
@@ -17,16 +31,58 @@ androidx-junit = { group = "androidx.test.ext", name = "junit", version.ref = "j
 androidx-espresso-core = { group = "androidx.test.espresso", name = "espresso-core", version.ref = "espressoCore" }
 androidx-lifecycle-runtime-ktx = { group = "androidx.lifecycle", name = "lifecycle-runtime-ktx", version.ref = "lifecycleRuntimeKtx" }
 androidx-activity-compose = { group = "androidx.activity", name = "activity-compose", version.ref = "activityCompose" }
-androidx-compose-bom = { group = "androidx.compose", name = "compose-bom", version.ref = "composeBom" }
-androidx-ui = { group = "androidx.compose.ui", name = "ui" }
-androidx-ui-graphics = { group = "androidx.compose.ui", name = "ui-graphics" }
-androidx-ui-tooling = { group = "androidx.compose.ui", name = "ui-tooling" }
-androidx-ui-tooling-preview = { group = "androidx.compose.ui", name = "ui-tooling-preview" }
-androidx-ui-test-manifest = { group = "androidx.compose.ui", name = "ui-test-manifest" }
-androidx-ui-test-junit4 = { group = "androidx.compose.ui", name = "ui-test-junit4" }
-androidx-material3 = { group = "androidx.compose.material3", name = "material3" }
-androidx-foundation = { group = "androidx.compose.foundation", name = "foundation" }
+# COMPOSE #
+activity-compose = { group = "androidx.activity", name = "activity-compose", version.ref = "activityCompose" }
+compose-bom = { group = "androidx.compose", name = "compose-bom", version.ref = "composeBom" }
+compose-ui = { group = "androidx.compose.ui", name = "ui" }
+compose-ui-graphics = { group = "androidx.compose.ui", name = "ui-graphics" }
+compose-ui-tooling = { group = "androidx.compose.ui", name = "ui-tooling" }
+compose-ui-tooling-preview = { group = "androidx.compose.ui", name = "ui-tooling-preview" }
+compose-ui-test-manifest = { group = "androidx.compose.ui", name = "ui-test-manifest", version.ref = "test-manifest"}
+compose-ui-test-junit4 = { group = "androidx.compose.ui", name = "ui-test-junit4" }
+compose-ui-text-google-fonts = { group = "androidx.compose.ui", name = "ui-text-google-fonts", version.ref = "google-fonts" }
+compose-foundation = { group = "androidx.compose.foundation", name = "foundation", version.ref = "foundation" }
+compose-runtime-livedata = { group = "androidx.compose.runtime", name = "runtime-livedata", version.ref = "livedata" }
 google-zxing = { group = "com.google.zxing", name = "core", version.ref = "zxing" }
+# NAVIGATION #
+navigation-compose = { group = "androidx.navigation", name = "navigation-compose", version.ref = "navigation"}
+# LOGING #
+timber = { group = "com.jakewharton.timber", name = "timber", version.ref = "timber"}
+# IMAGE LOADER #
+coil-compose = { group = "io.coil-kt", name = "coil-compose", version.ref = "coil" }
+# MATERIAL #
+androidx-material3 = { group = "androidx.compose.material3", name = "material3", version.ref = "material3"}
+# ROOM #
+room-runtime = { group = "androidx.room", name = "room-runtime", version.ref = "room"}
+room-common = { group = "androidx.room", name = "room-common", version.ref = "room" }
+room-compiler = { group = "androidx.room", name = "room-compiler", version.ref = "room"}
+room-ktx = { group = "androidx.room", name = "room-ktx", version.ref = "room"}
+room-rxjava2 = { group = "androidx.room", name = "room-rxjava2", version.ref = "room"}
+room-rxjava3 = { group = "androidx.room", name = "room-rxjava3", version.ref = "room"}
+room-guava = { group = "androidx.room", name = "room-guava", version.ref = "room"}
+room-paging = { group = "androidx.room", name = "room-paging", version.ref = "room"}
+# KOIN #
+koin-bom = { group = "io.insert-koin", name = "koin-bom" , version.ref = "koin"}
+koin-core = { group = "io.insert-koin", name = "koin-core" , version.ref = "koin"}
+koin-core-coroutines = { group = "io.insert-koin", name = "koin-core-coroutines" , version.ref = "koin"}
+koin-test = { group = "io.insert-koin", name = "koin-test" , version.ref = "koin"}
+koin-android = { group = "io.insert-koin", name = "koin-android" , version.ref = "koin"}
+koin-android-test = { group = "io.insert-koin", name = "koin-android-test" , version.ref = "koin"}
+koin-android-compat = { group = "io.insert-koin", name = "koin-android-compat" , version.ref = "koin"}
+koin-androidx-navigation = { group = "io.insert-koin", name = "koin-androidx-navigation" , version.ref = "koin"}
+koin-androidx-workmanager = { group = "io.insert-koin", name = "koin-androidx-workmanager" , version.ref = "koin"}
+koin-compose = { group = "io.insert-koin", name = "koin-compose" , version.ref = "koin"}
+koin-androidx-compose = { group = "io.insert-koin", name = "koin-androidx-compose" , version.ref = "koin"}
+koin-androidx-compose-navigation = { group = "io.insert-koin", name = "koin-androidx-compose-navigation" , version.ref = "koin"}
+koin-ktor = { group = "io.insert-koin", name = "koin-ktor" , version.ref = "koin"}
+koin-logger-slf4j = { group = "io.insert-koin", name = "koin-logger-slf4j" , version.ref = "koin"}
+# OTHER
+palette = { group = "androidx.palette", name = "palette", version.ref = "palette"}
+font-awesome = { group = "com.github.Gurupreet", name = "FontAwesomeCompose", version.ref = "font-awesome" }
+splashscreen = { group = "androidx.core", name = "core-splashscreen", version.ref = "splash" }
+accompanist-pager = { group = "com.google.accompanist", name = "accompanist-pager", version.ref = "accompanist" }
+accompanist-pager-indicators = { group = "com.google.accompanist", name = "accompanist-pager-indicators", version.ref = "accompanist" }
+accompanist-systemuicontroller = { group = "com.google.accompanist", name = "accompanist-systemuicontroller", version.ref = "accompanist" }
 
 [plugins]
 androidApplication = { id = "com.android.application", version.ref = "agp" }
