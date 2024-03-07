@@ -20,6 +20,11 @@ import androidx.navigation.compose.rememberNavController
 import com.rmtz.qr.ui.compose.Home
 import timber.log.Timber
 import android.os.Process
+import androidx.compose.foundation.layout.PaddingValues
+import androidx.compose.material3.FabPosition
+import androidx.compose.material3.Scaffold
+import com.rmtz.qr.ui.component.BottomAppBar
+import com.rmtz.qr.ui.component.ExtendedFloatingActionButton
 import com.rmtz.qr.ui.compose.Generate
 import com.rmtz.qr.ui.compose.History
 import com.rmtz.qr.ui.compose.Scanner
@@ -31,12 +36,26 @@ fun Navigation() {
     val navController: NavHostController = rememberNavController()
     val navBackStackEntry by navController.currentBackStackEntryAsState()
     val currentRoute = navBackStackEntry?.destination?.route
-
-    NavController(navController, currentRoute)
+    Scaffold(
+        floatingActionButton = {
+            ExtendedFloatingActionButton(navController)
+        },
+        floatingActionButtonPosition = FabPosition.End,
+        bottomBar = {
+            BottomAppBar(navController)
+        },
+        content = {
+            NavController(it, navController, currentRoute)
+        }
+    )
 }
 
 @Composable
-fun NavController(navController: NavHostController, currentRoute: String?) {
+fun NavController(
+    paddingValues: PaddingValues,
+    navController: NavHostController,
+    currentRoute: String?
+) {
     Timber.d("route $currentRoute")
     val context = LocalContext.current
     var lastBackPressedTime by remember { mutableLongStateOf(0L) }
@@ -99,7 +118,7 @@ fun NavController(navController: NavHostController, currentRoute: String?) {
             enterTransition = { SlideIn },
             exitTransition = { SlideOut },
             content = {
-                Home(navController)
+                Home(paddingValues, navController)
             }
         )
         composable(
@@ -107,7 +126,7 @@ fun NavController(navController: NavHostController, currentRoute: String?) {
             enterTransition = { SlideIn },
             exitTransition = { SlideOut },
             content = {
-                History(navController)
+                History(paddingValues, navController)
             }
         )
         composable(
@@ -115,7 +134,7 @@ fun NavController(navController: NavHostController, currentRoute: String?) {
             enterTransition = { SlideIn },
             exitTransition = { SlideOut },
             content = {
-                Generate(navController)
+                Generate(paddingValues, navController)
             }
         )
         composable(
@@ -123,7 +142,7 @@ fun NavController(navController: NavHostController, currentRoute: String?) {
             enterTransition = { SlideIn },
             exitTransition = { SlideOut },
             content = {
-                Scanner(navController)
+                Scanner(paddingValues, navController)
             }
         )
     }

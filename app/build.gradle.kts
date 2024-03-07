@@ -80,10 +80,15 @@ dependencies {
     implementation(libs.room.ktx)
     kapt(libs.room.compiler)
 
-    implementation(libs.accompanist.pager)
-    implementation(libs.accompanist.pager.indicators)
-
+    implementation(libs.google.accompanist.pager)
+    implementation(libs.google.accompanist.pager.indicators)
+    implementation(libs.google.accompanist.permissions)
     implementation(libs.google.zxing)
+    implementation(libs.google.mlkit.barcode.scanning)
+
+    implementation(libs.androidx.camera.lifecycle)
+    implementation(libs.androidx.camera.view)
+    implementation(libs.androidx.camera.camera2)
 
     testImplementation(libs.junit)
     androidTestImplementation(libs.androidx.junit)

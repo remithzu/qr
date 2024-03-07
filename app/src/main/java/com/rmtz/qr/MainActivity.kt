@@ -26,7 +26,6 @@ class MainActivity : ComponentActivity() {
         super.onCreate(savedInstanceState)
         setContent {
             QRTheme {
-                // A surface container using the 'background' color from the theme
                 Surface(
                     modifier = Modifier.fillMaxSize(),
                     color = MaterialTheme.colorScheme.background
@@ -56,8 +55,7 @@ fun Greeting(name: String, modifier: Modifier = Modifier) {
 }
 
 @Preview(
-    name = "Preview1",
-    device = Devices.PIXEL,
+    device = Devices.PIXEL_4,
     showSystemUi = true
 )
 @Composable
